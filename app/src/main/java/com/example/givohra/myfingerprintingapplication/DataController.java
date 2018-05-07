@@ -2,10 +2,15 @@ package com.example.givohra.myfingerprintingapplication;
 
 import android.content.ContentValues;
 import android.content.Context;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteException;
-import android.database.sqlite.SQLiteOpenHelper;
+//import android.database.Cursor;
+import net.sqlcipher.Cursor;
+import net.sqlcipher.DatabaseUtils;
+import net.sqlcipher.SQLException;
+import net.sqlcipher.database.SQLiteDatabase;
+import net.sqlcipher.database.SQLiteOpenHelper;
+//import android.database.sqlite.SQLiteDatabase;
+//import android.database.sqlite.SQLiteException;
+//import android.database.sqlite.SQLiteOpenHelper;
 
 public class DataController
 {
@@ -20,20 +25,21 @@ public class DataController
 
     DataBaseHelper dbHelper;
     Context context;
-    SQLiteDatabase db;
+    net.sqlcipher.database.SQLiteDatabase db;
     String passphrase = "pass";
 
     public DataController(Context context)
     {
         this.context=context;
         dbHelper=new DataBaseHelper(context);
+        SQLiteDatabase.loadLibs(context);
 
     }
 
     public DataController open()
     {
         //db=dbHelper.getWritableDatabase(passphrase);
-        db=dbHelper.getWritableDatabase();
+        db=dbHelper.getWritableDatabase(passphrase);
         return this;
     }
 
@@ -76,7 +82,7 @@ public class DataController
                 //db.execSQL("DROP TABLE IF EXISTS ITEM_Table");
                 db.execSQL(TABLE_CREATE);
             }
-            catch(SQLiteException e)
+            catch(SQLException e)
             {
                 e.printStackTrace();
             }

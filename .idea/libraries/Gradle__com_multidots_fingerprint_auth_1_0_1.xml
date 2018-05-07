@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.multidots:fingerprint-auth-1.0.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/fingerprint-auth-1.0.1.aar/eaa2a7bd5d602a9e5f996c658264d9cf/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/fingerprint-auth-1.0.1.aar/eaa2a7bd5d602a9e5f996c658264d9cf/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.multidots/fingerprint-auth/1.0.1/227bd6b915d245bcf835d2843aec444b3124605/fingerprint-auth-1.0.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
